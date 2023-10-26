@@ -65,12 +65,11 @@ function displayIngredients(meal) {
 
 
 function viewRecipe(){
-    console.log("aaa");
+
+
     instructions.style.display = "block";
     strInstructions.style.overflow = "scroll";
-
     strInstructions.innerHTML = response.meals[0].strInstructions;
-    // let response; // response değişkenini dışarıda tanımla
 
 }
 
