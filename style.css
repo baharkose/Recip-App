@@ -24,7 +24,9 @@ body{
     /* justify-content: center; */
     flex-direction: column;
     background-color:white;
+    border-radius: 4px;
     gap: 0.5rem;
+    position: relative; 
 }
 .search-bar{
     display: flex;
@@ -35,9 +37,10 @@ body{
 .search-text{
     border: none;
     outline: none;
-    border-bottom: 1px solid black;
-    height:4rem;
-    width: 18rem;
+    border-bottom: 3px solid black;
+    /* height:4rem;
+    width: 18rem; */
+    padding: 4px 16px 0 16px;
     
 }
 .search-btn{
@@ -102,3 +105,23 @@ img{
 
 
 
+.instructionsX{
+    background-color: white;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.fa-times{
+    position: absolute;
+    right: 2px;
+    font-size: 2rem;
+}
+
+.instructionsX p{
+    padding:15px;
+}
