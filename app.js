@@ -7,18 +7,21 @@ const recipeBtn = document.querySelector(".view-recipe-btn");
 const instructions = document.querySelector(".instructionsX");
 const exitBtn = document.querySelector(".fa-times");
 const strInstructions = document.querySelector(".strInstructions");
+const content = document.querySelector(".content");
+
 
 
 
 // strInstructions
 
 
+let response; // response değişkenini dışarıda tanımla
 
 
 async function recipe() {
     const api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputDiv.value}`);
 
-    const response = await api.json();
+    response = await api.json();
     console.log(response);
 
     // Yemek resmini ve adını güncelle
@@ -27,6 +30,8 @@ async function recipe() {
 
     // Malzemeleri görüntüle
     displayIngredients(response.meals[0]);
+
+    content.style.display= "block";
 
 
 
@@ -56,7 +61,10 @@ function displayIngredients(meal) {
 function viewRecipe(){
     console.log("aaa");
     instructions.style.display = "block";
-    strInstructions.innerHTML = response.meals[0].strMeal;
+    strInstructions.style.overflow = "scroll";
+
+    strInstructions.innerHTML = response.meals[0].strInstructions;
+    // let response; // response değişkenini dışarıda tanımla
 
 }
 
