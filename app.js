@@ -20,24 +20,30 @@ let response; // response değişkenini dışarıda tanımla
 
 async function recipe() {
     const api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputDiv.value}`);
-
     response = await api.json();
+
+
+  if(inputDiv.value ==""){
+    alert("Please enter a food name")
+
+}
+else
+{
     console.log(response);
 
-    // Yemek resmini ve adını güncelle
+        // Yemek resmini ve adını güncelle
     cardImg.src = response.meals[0].strMealThumb;
     imgContent.innerHTML = response.meals[0].strMeal;
 
-    // Malzemeleri görüntüle
+        // Malzemeleri görüntüle
     displayIngredients(response.meals[0]);
 
     content.style.display= "block";
-
-
-
+}
 }
 
-searchBtn.addEventListener("click", recipe);
+    searchBtn.addEventListener("click", recipe);
+
 
 function displayIngredients(meal) {
     // Önce mevcut içeriği temizle
