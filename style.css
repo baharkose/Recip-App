@@ -100,16 +100,19 @@ img{
     line-height: 2;
 }
 .btndiv{
+    /* background-color: red; */
     display: flex;
-    justify-content:end;
+    /* justify-content:end; */
+   
 
 }
 .view-recipe-btn{
 
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #FAC02A;
     border-radius: 4px;
     border: none;
+    display: none;
     
 }
 

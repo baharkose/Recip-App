@@ -39,6 +39,8 @@ else
     displayIngredients(response.meals[0]);
 
     content.style.display= "block";
+    recipeBtn.style.display= "block";
+
 }
 }
 
